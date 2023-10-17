@@ -8,6 +8,16 @@ steps:
     key: test
     depends_on: build
 
+  - label: ":test_tube: Test Dagger"
+    command: |
+      echo "Test Daggger"
+      curl -L https://dl.dagger.io/dagger/install.sh | sh
+      ./bin/dagger version
+
+    key: test-dagger
+    depends_on: build
+
+
   - label: ":rocket: Deploy"
     command: |
       echo "Launch the rocket"
