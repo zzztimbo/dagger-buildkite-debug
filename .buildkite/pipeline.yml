@@ -13,6 +13,7 @@ steps:
       echo "Test Daggger"
       curl -L https://dl.dagger.io/dagger/install.sh | sh
       ./bin/dagger version
+      ./bin/dagger run --progress tty echo hurro
 
     key: test-dagger
     depends_on: build
